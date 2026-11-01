@@ -1,0 +1,20 @@
+{
+  "qa": 10201,
+  "images": 1019,
+  "drawing_sources": 44,
+  "splits": {
+    "validation": 1155,
+    "train": 6972,
+    "test": 2074
+  },
+  "aligned_views": true,
+  "source_disjoint": true,
+  "files": 1332,
+  "total_bytes": 739480453,
+  "over_100_MiB": [],
+  "paper_pages": 19,
+  "website_interaction_logic": "passed",
+  "website_browser_visual": "not_verified",
+  "remote_deployment": "not_uploaded_pending_explicit_approval",
+  "current_paper_scoring": "provisional_supplemented_with_original_qwen_sensitivity"
+}

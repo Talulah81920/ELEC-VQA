@@ -1,0 +1,49 @@
+{
+  "judge_kind": "qwen",
+  "judge_identity": {
+    "metadata_sha256": {
+      "config.json": "9c6772f138ef9e5b3d1c18f2c87e451bbc01f5f1a4eabb36f9bf4f53829b903e",
+      "generation_config.json": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9",
+      "model.safetensors.index.json": "0183543f2e6e40d3d1e863ed0b2a8c9cdaf2ee4045ce724a45cea30e9995a0af",
+      "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "tokenizer_config.json": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "weight_sizes": {
+      "model-00001-of-00017.safetensors": 3916539832,
+      "model-00002-of-00017.safetensors": 3900847496,
+      "model-00003-of-00017.safetensors": 3900847480,
+      "model-00004-of-00017.safetensors": 3900847544,
+      "model-00005-of-00017.safetensors": 3900847544,
+      "model-00006-of-00017.safetensors": 3900847544,
+      "model-00007-of-00017.safetensors": 3900847544,
+      "model-00008-of-00017.safetensors": 3900847544,
+      "model-00009-of-00017.safetensors": 3900847544,
+      "model-00010-of-00017.safetensors": 3900847544,
+      "model-00011-of-00017.safetensors": 3900847544,
+      "model-00012-of-00017.safetensors": 3900847544,
+      "model-00013-of-00017.safetensors": 3900847544,
+      "model-00014-of-00017.safetensors": 3900847544,
+      "model-00015-of-00017.safetensors": 3900847544,
+      "model-00016-of-00017.safetensors": 3900847544,
+      "model-00017-of-00017.safetensors": 3098588976
+    },
+    "receipt": null,
+    "verification": "Recorded metadata hashes, declared revision and sizes, not full weight cryptographic hashes"
+  },
+  "dimension": "evidence",
+  "max_input_tokens": 12288,
+  "max_new_tokens": 512,
+  "rubrics_sha256": "c06f1c7f23d1972610ca176fbaa491ec0a5385ad18f61d68465f36994924d46c",
+  "implementation_sha256": "059746454e56aaf45ea53771c93cb4b71a135efcb787d7fdff379063b875d8cb",
+  "full_panel": true,
+  "software": {
+    "python": "3.10.22",
+    "torch": "2.5.1+cu121",
+    "transformers": "4.57.6",
+    "accelerate": "1.12.0",
+    "tokenizers": "0.22.2"
+  },
+  "judge_model": "Qwen/Qwen2.5-32B-Instruct",
+  "note": "Recorded original experimental identity. Public package refactors paths and metadata; original implementation and rubric hashes identify the executed experiment, not the renamed code."
+}

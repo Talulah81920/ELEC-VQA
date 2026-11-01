@@ -1,0 +1,24 @@
+[
+  {
+    "track": "direct",
+    "rows": 10370,
+    "models": [
+      "base",
+      "internvl",
+      "llava",
+      "A",
+      "E"
+    ],
+    "sha256": "a8b5681723cb409732c7c1a794bed08c6646b69465667726e8e7b8267bb0b2a1"
+  },
+  {
+    "track": "explain",
+    "rows": 6222,
+    "models": [
+      "base",
+      "A",
+      "E"
+    ],
+    "sha256": "5b1b30852f611c6497c9ff80eaa6e29a19516329ec5a1c797e1abb6ea69afecc"
+  }
+]

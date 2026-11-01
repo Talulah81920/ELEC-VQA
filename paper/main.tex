@@ -1,0 +1,51 @@
+% ELEC-VQA public manuscript, IEEE Access class.
+\documentclass{ieeeaccess}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,graphicx,booktabs,tabularx,array,xspace}
+\usepackage{textcomp}
+\usepackage{placeins}
+\usepackage{needspace}
+\definecolor{draftgray}{gray}{0.45}
+\definecolor{RQBackground}{rgb}{0.94,0.97,0.99}
+\definecolor{RQInk}{rgb}{0.0,0.35,0.55}
+\def\thevol{--}
+\def\theyear{--}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Improving Electrical Schematic Understanding with the ELEC-VQA Dataset: A Comparative Study}}
+\setlength{\emergencystretch}{2em}
+\newcommand{\dataset}{ELEC-VQA\xspace}
+\newcommand{\pending}{\phantom{00.00}}
+\newcommand{\fillhere}[1]{}
+\newcommand{\resultslot}[1]{\fillhere{#1}}
+\newcommand{\figspace}[2]{\fbox{\parbox[c][#1][c]{.94\linewidth}{\mbox{}}}}
+\newcommand{\researchquestion}[3]{\par\smallskip\noindent\colorbox{RQBackground}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textcolor{RQInk}{\textbf{#1. #2}}\par\smallskip #3}}\par\smallskip}
+\begin{document}
+\history{}
+\doi{}
+\input{00_frontmatter}
+\markboth{ELEC-VQA: Electrical Schematic Understanding}{ELEC-VQA: Electrical Schematic Understanding}
+\begin{abstract}
+\input{00_abstract}
+\end{abstract}
+\begin{keywords}
+Chain-of-thought supervision, electrical schematics, engineering datasets, evidence-grounded reasoning, parameter-efficient fine-tuning, visual question answering.
+\end{keywords}
+\titlepgskip=-15pt
+\maketitle
+\input{01_introduction}
+\input{02_related_work}
+\input{03_dataset}
+\input{04_method}
+\input{05_experiments}
+\input{06_discussion}
+\FloatBarrier
+\input{07_conclusion}
+\input{08_declarations}
+\appendices
+\input{09_appendix}
+\FloatBarrier
+\bibliographystyle{IEEEtran}
+\bibliography{references,references_access_additions}
+% Insert the confirmed authors' IEEEbiography/IEEEbiographynophoto blocks here.
+\EOD
+\end{document}

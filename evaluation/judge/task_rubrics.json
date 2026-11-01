@@ -1,0 +1,71 @@
+{
+  "protocol": "elec-vqa-lave-1.0",
+  "status": "requires_validation_calibration",
+  "rating_map": {
+    "1": 0,
+    "2": 0.5,
+    "3": 1
+  },
+  "task_rubrics": {
+    "T01": {
+      "partial_credit_allowed": false,
+      "criterion": "Determine whether the specified endpoints conduct under the exact stated contact conditions. Direct wiring and a conditional conducting path are different. A clear equivalent yes/no statement gets full credit."
+    },
+    "T02": {
+      "partial_credit_allowed": true,
+      "criterion": "Check valid minimal closure solution(s) under the stated task scope. Accept an alternative valid minimal set. If one solution is requested, do not require every alternative. If all alternatives are requested, a nonempty correct subset with no invalid solution may receive partial credit. An infeasible proposed solution is incorrect."
+    },
+    "T03": {
+      "partial_credit_allowed": true,
+      "criterion": "Compare the requested wire-only partition, including group boundaries and singletons. Group order and within-group order are immaterial. Correctly identified groups with omitted groups may receive partial credit; merging electrically separate groups or splitting a required group is an incorrect partition."
+    },
+    "T04": {
+      "partial_credit_allowed": true,
+      "criterion": "Identify exactly the requested terminals that lose conduction after the stated opening. Do not confuse retained with lost connectivity. A nonempty correct subset with omissions but no falsely included terminal may receive partial credit."
+    },
+    "T05": {
+      "partial_credit_allowed": false,
+      "criterion": "Distinguish guaranteed connected, guaranteed disconnected and state-dependent connectivity. Preserve any explicit open/closed case conclusions. Do not turn an unknown contact into a closed one."
+    },
+    "T06": {
+      "partial_credit_allowed": false,
+      "criterion": "Decide post-bypass conduction under the specified hypothetical intervention and contact conditions, not merely whether the original drawing contains a direct wire."
+    },
+    "T07": {
+      "partial_credit_allowed": true,
+      "criterion": "Return the full compatible single-fault candidate set when requested. Distinguish compatibility from unique diagnosis. A nonempty subset of valid candidates with omissions and no invalid additions may receive partial credit. Claiming uniqueness when multiple faults fit is incorrect."
+    },
+    "T08": {
+      "partial_credit_allowed": true,
+      "criterion": "Accept any allowed test-point set that separates every required observable fault pattern with minimum count. Do not require the one reference set. A feasible separating but nonminimum plan may receive partial credit; a plan that fails required separation is incorrect. Explicit test count must agree with the actual plan."
+    },
+    "T09": {
+      "partial_credit_allowed": false,
+      "criterion": "Assess the exact stated wiring/design requirement within the visible local scope and explicit conditions. Do not infer compliance from generic industrial plausibility."
+    },
+    "T10": {
+      "partial_credit_allowed": false,
+      "criterion": "Determine whether the proposed repair restores the specified static connections. Preserve intervention details; restoring one wire does not automatically restore every required connection."
+    },
+    "T11": {
+      "partial_credit_allowed": true,
+      "criterion": "Verify a simple conducting route and the encountered contact order under the specified states. Accept a different valid route. A valid unambiguously incomplete prefix may receive partial credit only if no invalid ordering or nonexistent step is asserted; an impossible complete path is incorrect."
+    },
+    "T12": {
+      "partial_credit_allowed": false,
+      "criterion": "Determine series/parallel/separate relative to the question endpoints and state scope. Use the task reference constraints; do not infer the relationship from device names alone."
+    },
+    "T13": {
+      "partial_credit_allowed": false,
+      "criterion": "Decide whether the given observation uniquely identifies the stated fault. One compatible fault is not proof of uniqueness. Preserve intact-wire and single-fault assumptions."
+    },
+    "T14": {
+      "partial_credit_allowed": false,
+      "criterion": "Assess whether the available schematic and explicit conditions establish the requested electrical voltage/state. A nameplate such as DC220V is not itself proof of live potential. Correct insufficiency is a valid answer, not an abstention."
+    },
+    "T15": {
+      "partial_credit_allowed": false,
+      "criterion": "Determine whether the specified contact opening interrupts the asked branch/route under the exact conditions. Do not confuse interrupting one route with disconnecting every possible parallel path."
+    }
+  }
+}

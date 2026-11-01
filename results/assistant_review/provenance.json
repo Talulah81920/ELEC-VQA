@@ -1,0 +1,23 @@
+{
+  "original_inputs_sha256": {
+    "results\\scores\\direct\\answer\\scores.jsonl": "a8b5681723cb409732c7c1a794bed08c6646b69465667726e8e7b8267bb0b2a1",
+    "results\\scores\\explain\\answer\\scores.jsonl": "5b1b30852f611c6497c9ff80eaa6e29a19516329ec5a1c797e1abb6ea69afecc",
+    "results\\scores\\explain\\evidence\\scores.jsonl": "1d9ddbd59ee40776ffd687e526a03d9427b5293f157dc79e7e724f7c24921dc8"
+  },
+  "unresolved_records": 585,
+  "unique_qa": 517,
+  "unique_responses": 552,
+  "classification_methods": {
+    "assistant_semantic": 96,
+    "reference_match": 7,
+    "assistant_evidence": 387,
+    "raw_candidate_recovery": 85,
+    "reference_evidence_match": 10
+  },
+  "ratings": {
+    "1": 537,
+    "3": 26,
+    "2": 22
+  },
+  "human_confirmed": 0
+}

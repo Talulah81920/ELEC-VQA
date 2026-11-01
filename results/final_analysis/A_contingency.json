@@ -1,0 +1,9 @@
+{
+  "('full', 'full')": 951,
+  "('nonfull', 'nonfull')": 606,
+  "('full', 'nonfull')": 139,
+  "('full', 'unresolved')": 353,
+  "('unresolved', 'nonfull')": 9,
+  "('nonfull', 'full')": 2,
+  "('nonfull', 'unresolved')": 4
+}

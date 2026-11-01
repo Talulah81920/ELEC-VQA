@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ELEC-VQA: 10,201 questions grounded in electrical CAD schematics. Explore real examples, evidence-guided fine-tuning, and a comparative study of five models.">
+  <meta name="theme-color" content="#123b39">
+  <meta property="og:title" content="ELEC-VQA · Read the circuit. Explain the answer.">
+  <meta property="og:description" content="An electrical schematic dataset and a comparative study of answer-only and evidence-guided fine-tuning.">
+  <meta property="og:type" content="website">
+  <title>ELEC-VQA · Electrical Schematic Understanding</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<header class="site-header">
+ <a href="#" class="wordmark" aria-label="ELEC-VQA home"><img src="assets/mark.svg" width="29" height="29" alt="">ELEC<span>—</span>VQA<small>RESEARCH</small></a>
+ <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="nav">☰</button>
+ <nav id="nav" aria-label="Main navigation"><a href="#dataset">Dataset</a><a href="#explore">Explore</a><a href="#method">Method</a><a href="#results">Results</a><a href="#resources" class="nav-paper">Paper & resources <span>↗</span></a></nav>
+</header>
+<main id="main">
+ <section class="hero section-shell">
+  <div class="hero-copy">
+   <div class="eyebrow"><span class="status-dot"></span> ELECTRICAL SCHEMATICS × VISUAL QUESTION ANSWERING</div>
+   <h1>Read the circuit.<br><em>Explain the answer.</em></h1>
+   <p class="paper-title">Improving Electrical Schematic Understanding with the ELEC-VQA Dataset: A Comparative Study</p>
+   <p class="hero-description">Beyond reading labels: connect the components, respect the conditions, and support the decision with verifiable evidence.</p>
+   <div class="hero-actions"><a class="button dark" href="assets/ELEC-VQA.pdf" target="_blank" rel="noopener"><span aria-hidden="true">↗</span> Read the paper</a><a class="button outline" href="#explore">Explore real examples <span aria-hidden="true">→</span></a></div>
+   <div class="hero-meta"><span>10,201 English QA</span><i></i><span>Native CAD sources</span><i></i><span>CC BY 4.0</span></div>
+  </div>
+  <div class="hero-visual">
+   <div class="diagram-label"><span class="mono">01 / ORIGINAL DWG WINDOW</span><span class="live-indicator">REAL DATA</span></div>
+   <div class="drawing-frame"><button class="image-button zoom-trigger" data-image="assets/example_01.png" aria-label="Enlarge the original electrical schematic"><img src="assets/example_01_detail.png" alt="Detail from the original DWG screenshot with 3UK and 2ZJ contacts and CZ terminals" fetchpriority="high"><span class="zoom-hint">Original detail · inspect full window ↗</span></button></div>
+   <div class="floating-question"><span class="small-label">A PRACTICAL QUESTION</span><p>Would bridging the open contact restore this path?</p><div><span class="answer-chip">Yes.</span><span>Trace the route. Check the states.</span></div></div>
+   <span class="technical-label" aria-hidden="true">CAD → IMAGE → QUESTION → EVIDENCE</span>
+  </div>
+ </section>
+
+ <section class="stats-band" aria-label="Dataset at a glance"><div class="section-shell stats-grid">
+  <div><strong>10,201</strong><span>English question–answer pairs</span></div><div><strong>1,019</strong><span>Schematic configurations</span></div><div><strong>15</strong><span>Engineering task families</span></div><div><strong>44</strong><span>Source drawings · 14 projects</span></div>
+ </div></section>
+
+ <section class="section-shell intro-section" id="dataset">
+  <div class="section-heading"><span class="eyebrow">01 / THE DATASET</span><h2>Small symbols.<br><em>Consequential connections.</em></h2></div>
+  <div class="intro-prose"><p class="lead">A line crossing is not always a connection. A contact symbol does not tell you its assumed state. A correct answer needs both topology and context.</p><p>ELEC-VQA brings engineering questions to native electrical CAD drawings. Every record pairs an image and a natural-language question with a short answer, compact evidence, and checks over a bounded terminal graph. The current sources are substation secondary-circuit drawings.</p></div>
+  <div class="dataset-details">
+   <div class="source-composition"><div class="mini-title">WHAT THE IMAGES REPRESENT</div><div class="composition-number"><b>300</b><span>original local windows</span><b class="variant-number">719</b><span>controlled variants</span></div><div class="composition-track" aria-label="300 original windows and 719 controlled variants"><span></span><span></span></div><p>Variants are controlled wiring interventions, not additional independent circuit designs. Original windows can overlap within a drawing.</p></div>
+   <div class="split-composition"><div class="mini-title">SOURCE-DISJOINT PARTITIONS</div><div class="split-bars"><div><span>Train</span><i style="--width:68.35%;--bar:#165f58"></i><b>6,972</b></div><div><span>Validation</span><i style="--width:11.32%;--bar:#79a49b"></i><b>1,155</b></div><div><span>Test</span><i style="--width:20.33%;--bar:#d8845c"></i><b>2,074</b></div></div><p>Related questions and edits stay with their source drawing. Primary test metrics use 2,064 questions, with ten T14 diagnostic controls reported separately.</p></div>
+  </div>
+ </section>
+
+ <section class="explore-section" id="explore"><div class="section-shell">
+  <div class="section-heading row-heading"><div><span class="eyebrow">02 / LOOK INSIDE</span><h2>Ask like an engineer.</h2></div><p>Browse eight real reference examples.<br>All screenshots here come from original DWG windows.</p></div>
+  <div class="explorer">
+   <aside class="example-list" aria-label="Choose a dataset example" id="example-list"></aside>
+   <div class="example-canvas"><div class="canvas-toolbar"><span id="example-type"></span><button class="text-button" id="example-zoom">View full image ↗</button></div><button class="example-picture" id="example-picture" aria-label="Enlarge the selected schematic"><img id="example-image" alt="Selected electrical schematic example" loading="lazy"></button><div class="image-caption"><span id="example-id"></span><span>Original drawing window</span></div></div>
+   <div class="example-content"><span class="small-label">QUESTION</span><h3 id="example-question"></h3><div class="reference-answer"><span class="small-label">REFERENCE ANSWER</span><p id="example-answer"></p></div><button class="evidence-toggle" id="evidence-toggle" aria-expanded="false" aria-controls="example-evidence"><span>Reveal compact evidence</span><span aria-hidden="true">＋</span></button><div class="evidence-body" id="example-evidence" hidden></div><p class="example-disclaimer">Reference annotations are graph-checked; independent expert validation is not claimed. The examples illustrate dataset content, not live model inference.</p><div class="example-pager"><button class="text-button" id="example-prev" aria-label="Previous example">← Previous</button><span id="example-count"></span><button class="text-button" id="example-next" aria-label="Next example">Next →</button></div></div>
+  </div>
+ </div></section>
+
+ <section class="section-shell method-section" id="method">
+  <div class="section-heading row-heading"><div><span class="eyebrow">03 / THE CONSTRUCTION</span><h2>Grounded in the drawing.<br><em>Checked against the circuit.</em></h2></div><p>One record, from native geometry<br>to a bounded, checkable explanation.</p></div>
+  <div class="construction-grid">
+   <article class="construction-step"><div class="step-number">01 <span>CAPTURE</span></div><div class="mini-drawing"><img src="assets/example_01.png" alt="A real local schematic window extracted from an original CAD drawing" loading="lazy"></div><h3>Preserve the visible geometry</h3><p>Native rendering produces legible local windows. Source provenance ties each question back to its drawing and circuit context.</p></article>
+   <article class="construction-step"><div class="step-number">02 <span>REPRESENT</span></div><svg class="graph-illustration" viewBox="0 0 340 155" role="img" aria-label="A bounded path through 3UK, 2ZJ, and CZ terminals"><path d="M30 80H105M105 80L152 48M177 48H230M230 48V105H304"/><path class="contact-gap" d="M152 48H177"/><circle cx="30" cy="80" r="5"/><circle cx="105" cy="80" r="5"/><circle cx="152" cy="48" r="5"/><circle cx="177" cy="48" r="5"/><circle cx="304" cy="105" r="5"/><text x="8" y="108">3UK:4</text><text x="80" y="110">3UK:3</text><text x="126" y="29">2ZJ:24</text><text x="181" y="29">2ZJ:23</text><text x="277" y="133">CZ:41</text><text class="graph-caption" x="110" y="149">explicit contact states + wiring</text></svg><h3>Separate wires from states</h3><p>A bounded terminal graph distinguishes external wiring from contact conduction. Hypothetical states and edits are explicit.</p></article>
+   <article class="construction-step"><div class="step-number">03 <span>VERIFY</span></div><div class="verification-visual"><span><i>✓</i> Relevant terminals</span><span><i>✓</i> Contact conditions</span><span><i>✓</i> Route or blocking fact</span><div>Concise answer + compact support <b>↗</b></div></div><h3>Verify the electrical claim</h3><p>Connectivity, minimal closures and fault-observation checks support reference answers. Evidence remains tied to visible local scope.</p></article>
+  </div>
+  <div class="supervision-demo"><div class="supervision-intro"><span class="eyebrow">TWO ALIGNED SUPERVISION VIEWS</span><h3>Same image.<br>Same question.<br><em>Different targets.</em></h3><p>Both adapters share a 7B backbone and the same training examples. The supervision target is the controlled difference.</p></div><div class="target-panel"><div class="target-tabs" role="tablist" aria-label="Training target"><button id="target-a" role="tab" aria-selected="false" aria-controls="target-content">A · Answer only</button><button id="target-e" class="active" role="tab" aria-selected="true" aria-controls="target-content">E · Evidence + answer</button></div><div class="target-body" id="target-content" role="tabpanel" aria-live="polite"></div><div class="target-footer"><span>LoRA adaptation</span><span>Qwen2.5-VL-7B-Instruct</span><span>Seed 42</span></div></div></div>
+ </section>
+
+ <section class="results-section" id="results"><div class="section-shell">
+  <div class="section-heading row-heading"><div><span class="eyebrow">04 / THE COMPARATIVE STUDY</span><h2>Better answers?<br><em>Better-supported answers?</em></h2></div><p>Different questions need different metrics.<br>Explore the comparison without hiding the trade-offs.</p></div>
+  <div class="results-controls"><div class="segmented" aria-label="Output protocol"><button data-track="direct">Direct answer</button><button data-track="explain" class="active">Explanation requested</button></div><div class="metric-controls" aria-label="Scoring dimension"><button data-metric="answer">Answer</button><button data-metric="evidence">Evidence</button><button data-metric="joint" class="active">Joint</button></div></div>
+  <div class="chart-layout"><div class="chart-narrative"><span class="small-label" id="chart-label">SAME-RESPONSE JOINT FULL CREDIT</span><div class="big-result" id="chart-result">+18.07<span>pp</span></div><h3 id="chart-title">More answers with valid support.</h3><p id="chart-description">With a common explanation prompt, E improves joint answer–evidence full credit over A. This is a gain in supported output, not universal answer accuracy.</p></div><div class="live-chart"><div class="chart-axis" aria-hidden="true"><span>0</span><span>25</span><span>50</span><span>75</span><span>100%</span></div><div class="chart-bars" id="chart-bars" aria-live="polite"></div><p id="chart-footnote"></p></div></div>
+  <div class="scoring-note"><div><span class="provisional-dot"></span><b>Provisional supplemented results</b><p>585 originally unresolved ratings receive supplementary classifications; none is human-confirmed. Original non-null Qwen ratings are unchanged. Select the original-only view to inspect sensitivity.</p></div><label class="switch-label"><input type="checkbox" id="supplemented" checked><span class="switch"></span>Include supplementary ratings</label></div>
+  <details class="protocol-details"><summary>Evaluation protocol & scope <span>＋</span></summary><div><p><b>Primary panel:</b> 2,064 test questions from seven drawings and two projects; one training seed. Ten T14 controls are excluded from accuracy aggregates.</p><p><b>Automatic judge:</b> Qwen2.5-32B-Instruct, reference-guided and identity-blinded. Answers and evidence are graded separately. Full credit is rating 3; partial credit is allowed only by the task rubric.</p><p><b>Supplementation:</b> assistant/reference-based provisional classification of null ratings, including 85 recovered numerical suggestions from original judge attempts. This is a mixed-evaluator view, not an independently validated human score.</p><p><b>Uncertainty:</b> drawing-cluster bootstrap intervals reflect seven-source resampling. They do not capture judge bias, reference errors, supplementary-rating validity or training-seed variation.</p></div></details>
+ </div></section>
+
+ <section class="section-shell findings-section" id="findings">
+  <div class="section-heading row-heading"><div><span class="eyebrow">05 / WHERE EVIDENCE HELPS — AND FAILS</span><h2>The gain is selective.</h2></div><p>More explicit support does not automatically mean<br>more reliable reasoning in every condition.</p></div>
+  <div class="findings-highlights"><article><span class="small-label">SUPPORT AMONG CORRECT ANSWERS</span><div class="finding-number">94.51<small>%</small></div><h3>E accompanies more correct answers with full-credit evidence.</h3><p>A: 65.81%. Conditional on each model’s own correct-answer subset; this is not a same-subset causal comparison.</p></article><article><span class="small-label">THREE OR MORE EXPLICIT STATES</span><div class="finding-number">+19.39<small>pp</small></div><h3>E benefits on a subset of multi-condition questions.</h3><p>98 questions. Task composition and complexity are correlated; the effect is exploratory, not monotonic across all bins.</p></article><article class="finding-caution"><span class="small-label">THE IMPORTANT COUNTEREXAMPLE</span><div class="finding-number">11.34<small>%</small></div><h3>E is weak when a changed state should leave the answer unchanged.</h3><p>A: 61.86% on 97 state-invariant pairs. Successful explanations alone do not establish selective condition use.</p></article></div>
+  <div class="pair-explorer"><div class="pair-tabs" aria-label="Controlled change subset"><button data-pair="state_flip" class="active">Relevant state change <span>Gain</span></button><button data-pair="state_invariance">Irrelevant state change <span>Failure</span></button><button data-pair="visual_invariance">Visual invariance <span>Gain</span></button><button data-pair="visual_flip">Topology change <span>Failure</span></button></div><div class="pair-body"><div><span class="small-label" id="pair-count"></span><h3 id="pair-title"></h3><p id="pair-description"></p></div><div class="pair-bars" id="pair-bars" aria-live="polite"></div></div><p class="pair-footnote">Pair success requires both members to be correct. Shared questions and source circuits make these descriptive comparisons, not independent trials.</p></div>
+ </section>
+
+ <section class="case-section"><div class="section-shell case-grid"><div class="case-drawing"><span class="eyebrow">06 / ONE ORIGINAL-DWG CASE</span><button class="image-button zoom-trigger" data-image="assets/example_01.png" aria-label="Enlarge the original drawing for the bypass case"><img src="assets/example_01_detail.png" alt="Detail of the actual original DWG window used for the 3UK and 2ZJ bypass case" loading="lazy"></button><p class="mono">E4QA_04b45d17904f4265d252 · Original detail · Click for full window</p></div><div class="case-story"><h2>A route that changes<br><em>the answer.</em></h2><p class="case-question">With 3UK 3–4 closed and 2ZJ 24–23 open, would bridging 2ZJ connect 3UK:4 to CZ:41?</p><div class="case-model-tabs" aria-label="Case output protocol"><button data-case="direct">Direct answer</button><button data-case="explain" class="active">Explanation requested</button></div><div class="case-response"><span>A · Answer-only adapter</span><p id="case-a"></p></div><div class="case-response case-e"><span>E · Evidence–answer adapter</span><p id="case-e"></p></div><p class="case-note">Actual recorded outputs. Both models fail in direct mode; only E succeeds here when an explanation is requested. This is a qualitative illustration, not proof that generated text causes correct reasoning.</p></div></div></section>
+
+ <section class="section-shell resources-section" id="resources"><div class="section-heading"><span class="eyebrow">07 / READ, EXPLORE & REPRODUCE</span><h2>Built to be examined.</h2><p>The manuscript, a real-data sample, evaluation tables and original project code.</p></div><div class="resource-grid">
+  <a href="assets/ELEC-VQA.pdf" target="_blank" rel="noopener" class="resource"><span class="resource-icon">↗</span><span class="small-label">MANUSCRIPT</span><h3>Read the paper</h3><p>English PDF · Full comparative study</p><span class="resource-bottom">Open PDF <b>↗</b></span></a>
+  <a href="assets/ELEC-VQA_sample.zip" download class="resource"><span class="resource-icon">▧</span><span class="small-label">REAL DATA</span><h3>Dataset sample</h3><p>8 original-window examples · Images + annotations</p><span class="resource-bottom">Download ZIP <b>↓</b></span></a>
+  <a href="assets/ELEC-VQA_code.zip" download class="resource"><span class="resource-icon">⌘</span><span class="small-label">REPRODUCTION</span><h3>Training & evaluation</h3><p>Original project code · Ubuntu / H100 configuration</p><span class="resource-bottom">Download ZIP <b>↓</b></span></a>
+  <a href="assets/results_supplemented.csv" download class="resource"><span class="resource-icon">▤</span><span class="small-label">RESULTS</span><h3>Inspect the numbers</h3><p>Full-credit and semantic scores · Provisional overlay</p><span class="resource-bottom">Download CSV <b>↓</b></span></a>
+ </div><div class="resource-notes"><span>The sample is not the complete 10,201-record release. A public repository URL has not yet been assigned.</span><a href="assets/ELEC-VQA_chinese_reading.zip" download>中文正文与插图 ↓</a><a href="assets/results_original_qwen.csv" download>Original Qwen-only results ↓</a></div>
+ <div class="citation-block"><div><span class="small-label">CITATION</span><h3>ELEC-VQA</h3><p>Preliminary manuscript citation.<br>Author metadata will accompany the public release.</p><button class="button outline small" id="copy-citation">Copy BibTeX <span>⧉</span></button><span id="copy-status" role="status"></span></div><pre id="bibtex">@misc{elecvqa2026,
+  title = {Improving Electrical Schematic Understanding
+    with the ELEC-VQA Dataset: A Comparative Study},
+  year = {2026},
+  note = {Research manuscript}
+}</pre></div>
+ </section>
+</main>
+<footer class="site-footer"><div class="section-shell footer-content"><div><a href="#" class="wordmark">ELEC<span>—</span>VQA</a><p>From electrical drawings to supported decisions.</p><span>Dataset: <a href="assets/DATASET_LICENSE.md">CC BY 4.0</a> · Original code: <a href="assets/CODE_LICENSE.txt">MIT</a></span></div><div><span class="small-label">RELATED RESEARCH</span><a href="https://joonv2.github.io/DrawingVQA/" target="_blank" rel="noopener">DrawingVQA ↗</a><a href="https://arxiv.org/abs/2105.03761" target="_blank" rel="noopener">e-ViL · Explanation evaluation ↗</a><a href="https://cs.stanford.edu/people/dorarad/gqa/evaluate.html" target="_blank" rel="noopener">GQA · Consistency analysis ↗</a></div><div class="footer-end"><span>Research project · 2026</span><a href="#">Back to top ↑</a><small>Page structure informed by <a href="https://nerfies.github.io/" target="_blank" rel="noopener">Nerfies</a> and <a href="https://joonv2.github.io/DrawingVQA/" target="_blank" rel="noopener">DrawingVQA</a>. Original site design and implementation.</small></div></div></footer>
+<dialog id="image-dialog"><div class="viewer-controls"><button id="native-size">Show original pixels</button><button id="close-dialog" aria-label="Close enlarged image">Close ×</button></div><div class="image-viewport" id="image-viewport"><img id="dialog-image" alt="Enlarged original electrical schematic"></div><p>Unmodified dataset screenshot · Original-pixel mode supports scrolling to inspect fine lines</p></dialog>
+<noscript><div class="noscript">Enable JavaScript to use the example browser and interactive charts. The paper and resource downloads remain available above.</div></noscript>
+<script src="data.js"></script><script src="app.js"></script>
+</body></html>

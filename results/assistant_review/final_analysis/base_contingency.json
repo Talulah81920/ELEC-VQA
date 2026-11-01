@@ -1,0 +1,6 @@
+{
+  "('nonfull', 'nonfull')": 1254,
+  "('full', 'full')": 659,
+  "('full', 'nonfull')": 146,
+  "('nonfull', 'full')": 5
+}

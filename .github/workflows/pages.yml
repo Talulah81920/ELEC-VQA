@@ -1,0 +1,45 @@
+name: Publish ELEC-VQA project page
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'website/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out website source
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            website
+          persist-credentials: false
+      - name: Check static interactions and resources
+        run: node website/check-site.mjs
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: website/dist
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
