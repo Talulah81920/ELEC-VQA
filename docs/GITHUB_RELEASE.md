@@ -1,10 +1,10 @@
 # GitHub release
 
-Intended repository: `Talulah81920/ELEC-VQA` (public).
+Public repository: https://github.com/Talulah81920/ELEC-VQA
 
-Expected project-page address after a successful Pages deployment:
-`https://talulah81920.github.io/ELEC-VQA/`.
-The expected address is not a claim that deployment has completed.
+Project page: https://talulah81920.github.io/ELEC-VQA/
+
+Deployment status is recorded in the repository Actions tab.
 
 ## Included
 

@@ -6,10 +6,13 @@ The sample browser uses real released records; it is not live model inference.
 
 ## Hosting
 
-The Sites identity in `.openai/hosting.json` belongs to the private preview.
-For GitHub Pages, publish the contents of `dist/` as the Pages artifact or copy
-them into a dedicated Pages repository. Relative resource paths are compatible
-with a repository subpath. No GitHub repository has been created or published.
+Repository: https://github.com/Talulah81920/ELEC-VQA
+
+Project page: https://talulah81920.github.io/ELEC-VQA/
+
+The GitHub Pages workflow is `.github/workflows/pages.yml`. Relative resources
+work under the repository subpath. The page uses no model backend, account
+system, analytics or external JavaScript dependency.
 
 ## Content and evidence
 
@@ -22,8 +25,9 @@ with a repository subpath. No GitHub repository has been created or published.
 
 The 585 supplemented ratings are explicitly provisional and not human-confirmed.
 They must not be described as pure Qwen ratings or independent expert labels.
-The complete dataset is not included in the small website download; the sample
-contains eight examples only. Author and public repository metadata remain unset.
+The complete dataset is included in the repository, not in the small website
+sample download. The sample contains eight examples only. Author and publication
+metadata remain to be supplied.
 
 ## Provenance and maintenance
 

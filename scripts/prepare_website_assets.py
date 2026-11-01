@@ -30,6 +30,7 @@ with zipfile.ZipFile(assets/'ELEC-VQA_code.zip','w',compression=zipfile.ZIP_DEFL
   for f in (R/folder).rglob('*'):
    if f.is_file() and '__pycache__' not in f.parts:z.write(f,'ELEC-VQA/'+f.relative_to(R).as_posix())
  for name in ['README.md','requirements.txt','pyproject.toml','LICENSE','LICENSE_NOTICE.md']:z.write(R/name,'ELEC-VQA/'+name)
+ z.writestr('ELEC-VQA/ARCHIVE_CONTENTS.md','# Code-only archive\n\nThis download contains the project code and configuration, not the full dataset, recorded results, model weights or manuscript. Obtain the complete release from https://github.com/Talulah81920/ELEC-VQA before running commands that require dataset/ or results/.\n')
 with zipfile.ZipFile(assets/'ELEC-VQA_sample.zip','w',compression=zipfile.ZIP_DEFLATED) as z:
  z.writestr('ELEC-VQA_sample/annotations.jsonl',''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in selected))
  for r in selected:z.write(R/'dataset'/r['image'],'ELEC-VQA_sample/'+r['image'])
