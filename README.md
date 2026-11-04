@@ -3,6 +3,7 @@
 **Improving Electrical Schematic Understanding with the ELEC-VQA Dataset: A Comparative Study**
 
 [Project webpage](https://talulah81920.github.io/ELEC-VQA/) ·
+[paper](paper/ELEC-VQA.pdf) ·
 [Dataset card](docs/DATASET_CARD.md) · [Results](docs/RESULTS.md)
 
 ELEC-VQA is a source-traceable electrical schematic visual question answering
